@@ -1,0 +1,4 @@
+from  webbrowser import *
+sõna = input("Sisestage otsingutermin: ")
+address = "http://www.eki.ee/dict/qs/index.cgi?Q=" + sõna
+open(address)
