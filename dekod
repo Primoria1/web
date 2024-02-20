@@ -1,0 +1,27 @@
+def kodeeri(sümbol, nihe):
+    return chr(ord(sümbol)+nihe)
+
+def dekodeeri(sümbol, nihe):
+    return chr(ord(sümbol)-nihe)
+    
+def dešifreeri(failinimi2,nihe2):
+    f=open(failinimi2, encoding="UTF-8")
+    
+    for rida in f:
+        for sümbol in rida:
+            print(dekodeeri(sümbol,nihe2), end ="")
+    f.close()
+    
+def šifreeri(failinimi,nihe):
+    f=open(failinimi, "w", encoding="UTF-8")
+    kiri  = input("Sisesta lause: ")
+    for sümbol in kiri:
+        f.write(kodeeri(sümbol, nihe))
+    f.close()
+
+failinimi = input("Kuhu tahad oma sõnumi salvestada?: ")+".txt"
+nihe = int(input("Sisesta šifri nihe: "))
+šifreeri(failinimi, nihe)
+failinimi2=input("Millis faili tahad dekodeerida: ")+".txt"
+nihe2 = int(input("Sisesta šifri nihe: "))
+dešifreeri(failinimi, nihe)
