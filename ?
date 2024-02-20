@@ -1,0 +1,8 @@
+doonorNimi = input("Mis failist info võtta? ")+ ".txt"
+aktseptorNimi = input("Millisesse faili info pannakse? ")+ ".txt"
+doonorFail = open(doonorNimi, encoding="UTF-8")
+aktseptorFail = open(aktseptorNimi, "w")
+for rida in doonorFail:
+    aktseptorFail.write(rida.upper())
+doonorFail.close()
+aktseptorFail.close()
